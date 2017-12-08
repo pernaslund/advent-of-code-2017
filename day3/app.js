@@ -40,6 +40,7 @@ const input = 347991
 
 matrix = []
 pos = {x: 0, y: 0}
+iter = 1
 
 function initMatrix() {
   for (let i = 0; i < 100; i++) {
@@ -68,7 +69,25 @@ function calculateValue() {
 function getNextPos() {
   let temp = {}
   Object.assign(temp, pos)
-  temp.x += 1
+
+  let direction = { x: 0, y: 0 }
+
+  // up
+  direction = {...direction, y: 1}
+
+  // left
+  direction = {...direction, x: -1}
+
+  // down
+  direction = {...direction, x: -1}
+
+  // right
+  direction = {...direction, x: -1}
+
+  console.log('direction ', direction)
+
+
+  // temp.x += 1
 
   return temp
 }
